@@ -333,7 +333,8 @@ class DataHandlerMeta(type):
             if platform.system() == "Windows":
                 value = os.path.join(os.getenv("APPDATA"), "biopython")
             else:  # Unix/Linux/Mac
-                home = os.path.expanduser("~")
+                # home = os.path.expanduser("~")
+                home = "/tmp"
                 value = os.path.join(home, ".config", "biopython")
         # Create DTD local directory
         cls.local_dtd_dir = os.path.join(value, "Bio", "Entrez", "DTDs")
